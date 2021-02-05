@@ -20,18 +20,21 @@ public class DisplayInfo extends AppCompatActivity {
         Address = findViewById(R.id.taddress);
         DOB = findViewById(R.id.tDOB);
 
-        Intent intent = getIntent();
-        String myName = intent.getStringExtra("mName");
-        String myEmail = intent.getStringExtra("mEmail");
-        String myMobile = intent.getStringExtra("mMobile");
-        String myAddress = intent.getStringExtra("mAddress");
-        String myDOB = intent.getStringExtra("mDOB");
+//        Intent intent = getIntent();
+//        String myName = intent.getStringExtra("mName");
+//        String myEmail = intent.getStringExtra("mEmail");
+//        String myMobile = intent.getStringExtra("mMobile");
+//        String myAddress = intent.getStringExtra("mAddress");
+//        String myDOB = intent.getStringExtra("mDOB");
 
-        Name.setText("Name : "+myName);
-        Email.setText("Email :"+myEmail);
-        Mobile.setText("Mobile Number :"+myMobile);
-        Address.setText("Address "+myAddress);
-        DOB.setText("DOB :"+myDOB);
+
+        DetailsModelCls detailsModelCls = (DetailsModelCls) getIntent().getSerializableExtra("data");
+
+        Name.setText(detailsModelCls.getName());
+        Email.setText(detailsModelCls.getEmail());
+        Mobile.setText(detailsModelCls.getMob());
+        Address.setText(detailsModelCls.getAddress());
+        DOB.setText(detailsModelCls.getDob());
 
 
     }

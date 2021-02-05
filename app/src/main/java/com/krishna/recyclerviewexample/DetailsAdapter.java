@@ -67,12 +67,16 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.ViewHold
                 @Override
                 public void onClick(View v) {
 
+                    DetailsModelCls details = mDetailList.get(getAdapterPosition());
+
                     Intent intent = new Intent(mContext,DisplayInfo.class);
-                    intent.putExtra("mName",name.getText().toString().trim());
-                    intent.putExtra("mMobile",mobile.getText().toString().trim());
-                    intent.putExtra("mEmail",email.getText().toString().trim());
-                    intent.putExtra("mAddress",address.getText().toString().trim());
-                    intent.putExtra("mDOB",dob.getText().toString().trim());
+//                    intent.putExtra("mName",name.getText().toString().trim());
+//                    intent.putExtra("mMobile",mobile.getText().toString().trim());
+//                    intent.putExtra("mEmail",email.getText().toString().trim());
+//                    intent.putExtra("mAddress",address.getText().toString().trim());
+//                    intent.putExtra("mDOB",dob.getText().toString().trim());
+
+                    intent.putExtra("data",details);
                     mContext.startActivity(intent);
                 }
             });

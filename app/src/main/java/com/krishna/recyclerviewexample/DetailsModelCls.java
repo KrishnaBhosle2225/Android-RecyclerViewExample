@@ -1,6 +1,8 @@
 package com.krishna.recyclerviewexample;
 
-public class DetailsModelCls {
+import java.io.Serializable;
+
+public class DetailsModelCls implements Serializable {
     String name,mob,dob,address,email;
 
     public DetailsModelCls() {
